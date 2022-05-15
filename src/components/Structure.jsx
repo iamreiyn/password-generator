@@ -148,7 +148,7 @@ function Structure() {
           checked="false"
         ></input>
         <label className="form-check-label" htmlFor="flexCheckChecked">
-          Include Symbols
+          Include Symbols (e.g. !@&$%)
         </label>
       </div>
       <div className="form-check">
@@ -161,7 +161,7 @@ function Structure() {
           checked="false"
         ></input>
         <label className="form-check-label" htmlFor="flexCheckChecked">
-          Include Numbers
+          Include Numbers (e.g. 123456)
         </label>
       </div>
       <div className="form-check">
@@ -174,7 +174,7 @@ function Structure() {
           checked="false"
         ></input>
         <label className="form-check-label" htmlFor="flexCheckChecked">
-          Include Lowercase Letters
+          Include Lowercase Letters (e.g. abcdefg)
         </label>
       </div>
       <div className="form-check">
@@ -187,7 +187,7 @@ function Structure() {
           checked="false"
         ></input>
         <label className="form-check-label" htmlFor="flexCheckChecked">
-          Include Uppercase Letters
+          Include Uppercase Letters (e.g. ABCDEFG)
         </label>
       </div>
       <div className="form-check">
