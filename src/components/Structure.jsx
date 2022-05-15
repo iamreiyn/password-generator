@@ -5,21 +5,9 @@ function Structure() {
   let lowercase = true;
   let symbols = true;
   let numbers = true;
-  let passwordLength = 12;
-  const [sensitivity, setSens] = useState("Weak");
+  let passwordLength = -1;
+  const [sensitivity, setSens] = useState("Empty");
   const [pass, setPass] = useState("Your generated password will be displayed here");
-
-  function setLength() {
-    passwordLength = document.getElementById("inputlength").value;
-    if (passwordLength > 10 && passwordLength < 19) {
-      setSens("Medium");
-    } else if (passwordLength > 19) {
-      setSens("Strong");
-    }
-    else if (passwordLength < 10) {
-      setSens("Weak")
-    }
-  }
 
   function uppercaseSel() {
     if (uppercase) {
@@ -52,6 +40,36 @@ function Structure() {
       symbols = true;
     }
   }
+  
+  function onChangeLength() {
+    passwordLength = document.getElementById("inputlength").value;
+    if (passwordLength < 4) {
+        setSens("Empty")
+        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1 disabled"
+        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1 disabled"
+        document.getElementById('basic-addon2').className = "input-group-text text-muted"
+    } else if (passwordLength > 3 && passwordLength <= 9) {
+        setSens("Weak")
+        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
+        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
+        document.getElementById('basic-addon2').className = "input-group-text text-danger"
+    } else if (passwordLength >= 10 && passwordLength <= 19) {
+        setSens("Medium")
+        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
+        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
+        document.getElementById('basic-addon2').className = "input-group-text text-warning"
+    } else if (passwordLength > 19 && passwordLength <= 30) {
+        setSens("Strong")
+        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
+        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
+        document.getElementById('basic-addon2').className = "input-group-text text-success"
+    } else if (passwordLength > 30) {
+        setSens("Overpowered")
+        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
+        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
+        document.getElementById('basic-addon2').className = "input-group-text text-info"
+    }
+  }
 
   const copyToClip = () => {
     navigator.clipboard.writeText(pass);
@@ -63,15 +81,7 @@ function Structure() {
       alert("Please select at least one character type");
     }
 
-    passwordLength = document.getElementById("inputlength").value;
-    if (passwordLength > 10 && passwordLength < 19) {
-      setSens("Medium");
-    } else if (passwordLength > 19) {
-      setSens("Strong");
-    }
-    else if (passwordLength < 10) {
-      setSens("Weak")
-    }
+    passwordLength = document.getElementById('inputlength').value
 
     const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lower = "abcdefghijqlmnopqrstuvwxyz";
@@ -109,15 +119,15 @@ function Structure() {
       <div className="input-group mb-3" style={{width: "500px"}}>
         <input
           id="inputlength"
-          onClick={setLength}
           type="number"
+          onChange={onChangeLength}
           className="form-control"
           placeholder="Password Length"
           aria-label="Password Length"
           aria-describedby="basic-addon2"
         />
         <div className="input-group-append">
-          <span className="input-group-text" id="basic-addon2" style={{color: sensitivity==="Weak"?"red":"green"}}>
+          <span className="input-group-text text-muted" id="basic-addon2">
             <strong>{sensitivity}</strong>
           </span>
         </div>
@@ -186,20 +196,22 @@ function Structure() {
         </label>
       </div>
       <button
+        id="passGenbtn"
         onClick={generatePassword}
         type="button"
-        className="btn btn-primary my-3 mx-1"
+        className="btn btn-primary my-3 mx-1 disabled"
       >
         <label className="material-icons">done</label>Generate Password
       </button>
       <button
+        id="copytoClipbtn"
         onClick={copyToClip}
         type="button"
-        className="btn btn-primary my-3 mx-1"
+        className="btn btn-primary my-3 mx-1 disabled"
       >
         <span className="material-icons">content_copy</span> Copy to Clipboard
       </button>
-      <button type="button" className="btn btn-primary my-3 mx-1">
+      <button type="button" className="btn btn-danger my-3 mx-1">
         <span className="material-icons">restart_alt</span> Reset
       </button>
 
