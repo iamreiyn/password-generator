@@ -3,7 +3,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          <img src="https://i.postimg.cc/fTnsKHZJ/renisal.png" alt="Ren's Pass Gen"></img>
+          <img src="https://i.postimg.cc/QxfTfc27/rens.png" alt="Ren's Pass Gen"></img>
         </a>
         <button
           className="navbar-toggler"
@@ -39,6 +39,7 @@ function Navbar() {
               </a>
             </li>
           </ul>
+          
           <form className="d-flex">
             <input
               className="form-control me-2"
