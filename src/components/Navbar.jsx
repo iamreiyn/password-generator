@@ -3,7 +3,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          <img src="https://i.postimg.cc/gjdMCXYh/renisal.png" alt="Ren's PassGen"></img>
+          <img src="https://i.postimg.cc/BQ9fMWmF/renisal.png" alt="Ren's PassGen"></img>
         </a>
         <button
           className="navbar-toggler"
@@ -26,6 +26,11 @@ function Navbar() {
             <li className="nav-item">
               <a className="nav-link" href="https://www.github.com/renisal">
                 Creator
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="https://github.com/renisal?tab=repositories">
+                More Apps
               </a>
             </li>
           </ul>
