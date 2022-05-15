@@ -1,88 +1,106 @@
 import { useState } from "react";
 
 function Structure() {
-  let uppercase = true;
-  let lowercase = true;
-  let symbols = true;
-  let numbers = true;
+  const [uppercase, setUpStatus] = useState(true);
+  const [lowercase, setLowStatus] = useState(true);
+  const [symbols, setSymStatus] = useState(true);
+  const [numbers, setNumStatus] = useState(true);
   let passwordLength = -1;
   const [sensitivity, setSens] = useState("Empty");
-  const [pass, setPass] = useState("Your generated password will be displayed here");
+  const [pass, setPass] = useState(
+    "Your generated password will be displayed here"
+  );
 
   function uppercaseSel() {
     if (uppercase) {
-      uppercase = false;
+      setUpStatus(false);
     } else if (!uppercase) {
-      uppercase = true;
+      setUpStatus(true);
     }
   }
 
   function lowercaseSel() {
     if (lowercase) {
-      lowercase = false;
+      setLowStatus(false);
     } else {
-      lowercase = true;
+      setLowStatus(true);
     }
   }
 
   function numbercaseSel() {
     if (numbers) {
-      numbers = false;
+      setNumStatus(false);
     } else {
-      numbers = true;
+      setNumStatus(true);
     }
   }
 
   function symbolcaseSel() {
     if (symbols) {
-      symbols = false;
+      setSymStatus(false);
     } else {
-      symbols = true;
+      setSymStatus(true);
     }
   }
-  
+
   function onChangeLength() {
     passwordLength = document.getElementById("inputlength").value;
     if (passwordLength < 4) {
-        setSens("Empty")
-        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1 disabled"
-        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1 disabled"
-        document.getElementById('basic-addon2').className = "input-group-text text-muted"
-        document.getElementById('genPass').style.borderColor = 'grey'
+      setSens("Empty");
+      document.getElementById("passGenbtn").className =
+        "btn btn-primary my-3 mx-1 disabled";
+      document.getElementById("copytoClipbtn").className =
+        "btn btn-primary my-3 mx-1 disabled";
+      document.getElementById("basic-addon2").className =
+        "input-group-text text-muted";
+      document.getElementById("genPass").style.borderColor = "grey";
     } else if (passwordLength > 3 && passwordLength <= 9) {
-        setSens("Weak")
-        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('basic-addon2').className = "input-group-text text-danger"
-        document.getElementById('genPass').style.borderColor = 'red'
+      setSens("Weak");
+      document.getElementById("passGenbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("copytoClipbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("basic-addon2").className =
+        "input-group-text text-danger";
+      document.getElementById("genPass").style.borderColor = "red";
     } else if (passwordLength >= 10 && passwordLength <= 19) {
-        setSens("Medium")
-        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('basic-addon2').className = "input-group-text text-warning"
-        document.getElementById('genPass').style.borderColor = 'orange'
+      setSens("Medium");
+      document.getElementById("passGenbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("copytoClipbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("basic-addon2").className =
+        "input-group-text text-warning";
+      document.getElementById("genPass").style.borderColor = "orange";
     } else if (passwordLength > 19 && passwordLength <= 30) {
-        setSens("Strong")
-        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('basic-addon2').className = "input-group-text text-success"
-        document.getElementById('genPass').style.borderColor = 'green'
+      setSens("Strong");
+      document.getElementById("passGenbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("copytoClipbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("basic-addon2").className =
+        "input-group-text text-success";
+      document.getElementById("genPass").style.borderColor = "green";
     } else if (passwordLength > 30 && passwordLength <= 60) {
-        setSens("Overpowered")
-        document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('basic-addon2').className = "input-group-text"
-        document.getElementById("basic-addon2").style.color = "purple"
-        document.getElementById('genPass').style.borderColor = 'purple'
+      setSens("Overpowered");
+      document.getElementById("passGenbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("copytoClipbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("basic-addon2").className = "input-group-text";
+      document.getElementById("basic-addon2").style.color = "purple";
+      document.getElementById("genPass").style.borderColor = "purple";
     } else if (passwordLength > 60) {
-      setSens("Overpowered")
-      document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
-      document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
-      document.getElementById('basic-addon2').className = "input-group-text"
-      document.getElementById("basic-addon2").style.color = "purple"
-      document.getElementById('genPass').style.borderColor = 'purple'
-        passwordLength = 60
-        document.getElementById('inputlength').value = '60'
+      setSens("Overpowered");
+      document.getElementById("passGenbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("copytoClipbtn").className =
+        "btn btn-primary my-3 mx-1";
+      document.getElementById("basic-addon2").className = "input-group-text";
+      document.getElementById("basic-addon2").style.color = "purple";
+      document.getElementById("genPass").style.borderColor = "purple";
+      passwordLength = 60;
+      document.getElementById("inputlength").value = "60";
     }
   }
 
@@ -91,12 +109,20 @@ function Structure() {
     alert("Copied to Clipboard");
   };
 
+  const resetSettings = () => {
+    setLowStatus(false)
+    setUpStatus(false)
+    setSymStatus(false)
+    setNumStatus(false)
+    document.getElementById('inputlength').value = ""
+  }
+
   const generatePassword = () => {
     if (!uppercase && !lowercase && !numbers && !symbols) {
       alert("Please select at least one character type");
     }
 
-    passwordLength = document.getElementById('inputlength').value
+    passwordLength = document.getElementById("inputlength").value;
 
     const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lower = "abcdefghijqlmnopqrstuvwxyz";
@@ -131,7 +157,7 @@ function Structure() {
     <div className="container my-5">
       <h1>🔒 Random Password Generator</h1>
       <hr></hr>
-      <div className="input-group mb-3" style={{width: "500px"}}>
+      <div className="input-group mb-3" style={{ width: "500px" }}>
         <input
           id="inputlength"
           type="number"
@@ -153,8 +179,8 @@ function Structure() {
           className="form-check-input"
           type="checkbox"
           value=""
-          id="flexCheckChecked"
-          checked="false"
+          id="flexCheckChecked1"
+          checked={symbols ? true : false}
         ></input>
         <label className="form-check-label" htmlFor="flexCheckChecked">
           Include Symbols (e.g. !@&$%)
@@ -166,8 +192,8 @@ function Structure() {
           className="form-check-input"
           type="checkbox"
           value=""
-          id="flexCheckChecked"
-          checked="false"
+          id="flexCheckChecked2"
+          checked={numbers ? true : false}
         ></input>
         <label className="form-check-label" htmlFor="flexCheckChecked">
           Include Numbers (e.g. 123456)
@@ -179,8 +205,8 @@ function Structure() {
           className="form-check-input"
           type="checkbox"
           value=""
-          id="flexCheckChecked"
-          checked="false"
+          id="flexCheckChecked3"
+          checked={lowercase ? true : false}
         ></input>
         <label className="form-check-label" htmlFor="flexCheckChecked">
           Include Lowercase Letters (e.g. abcdefg)
@@ -192,8 +218,8 @@ function Structure() {
           className="form-check-input"
           type="checkbox"
           value=""
-          id="flexCheckChecked"
-          checked="false"
+          id="flexCheckChecked4"
+          checked={uppercase ? true : false}
         ></input>
         <label className="form-check-label" htmlFor="flexCheckChecked">
           Include Uppercase Letters (e.g. ABCDEFG)
@@ -226,12 +252,14 @@ function Structure() {
       >
         <span className="material-icons">content_copy</span> Copy to Clipboard
       </button>
-      <button type="button" className="btn btn-danger my-3 mx-1">
+      <button onClick={resetSettings} type="button" className="btn btn-danger my-3 mx-1">
         <span className="material-icons">restart_alt</span> Reset
       </button>
 
       <div className="input-group">
-      <span className="input-group-text" id="genPass"><strong>{pass}</strong></span>
+        <span className="input-group-text" id="genPass">
+          <strong>{pass}</strong>
+        </span>
       </div>
     </div>
   );
