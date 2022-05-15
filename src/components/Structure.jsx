@@ -7,7 +7,7 @@ function Structure() {
   let numbers = true;
   let passwordLength = 12;
   const [sensitivity, setSens] = useState("Weak");
-  const [pass, setPass] = useState("Your Generated Password will be Displayed Here");
+  const [pass, setPass] = useState("Your generated password will be displayed here");
 
   function setLength() {
     passwordLength = document.getElementById("inputlength").value;
@@ -104,7 +104,7 @@ function Structure() {
         <input
           id="inputlength"
           onClick={setLength}
-          type="text"
+          type="number"
           className="form-control"
           placeholder="Password Length"
           aria-label="Password Length"
@@ -112,7 +112,7 @@ function Structure() {
         />
         <div className="input-group-append">
           <span className="input-group-text" id="basic-addon2" style={{color: sensitivity==="Weak"?"red":"green"}}>
-            {sensitivity}
+            <strong>{sensitivity}</strong>
           </span>
         </div>
       </div>
@@ -198,7 +198,7 @@ function Structure() {
       </button>
 
       <div className="input-group">
-        <span className="input-group-text">{pass}</span>
+        <span className="input-group-text" style={{borderColor: sensitivity==="Weak"?"red":"green"}}><strong>{pass}</strong></span>
       </div>
     </div>
   );
