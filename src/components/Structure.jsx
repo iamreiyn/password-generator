@@ -11,10 +11,13 @@ function Structure() {
 
   function setLength() {
     passwordLength = document.getElementById("inputlength").value;
-    if (passwordLength > 10 && passwordLength < 20) {
+    if (passwordLength > 10 && passwordLength < 19) {
       setSens("Medium");
-    } else if (passwordLength > 20) {
+    } else if (passwordLength > 19) {
       setSens("Strong");
+    }
+    else if (passwordLength < 10) {
+      setSens("Weak")
     }
   }
 
@@ -65,6 +68,9 @@ function Structure() {
       setSens("Medium");
     } else if (passwordLength > 19) {
       setSens("Strong");
+    }
+    else if (passwordLength < 10) {
+      setSens("Weak")
     }
 
     const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -198,7 +204,7 @@ function Structure() {
       </button>
 
       <div className="input-group">
-        <span className="input-group-text" style={{borderColor: sensitivity==="Weak"?"red":"green"}}><strong>{pass}</strong></span>
+      <span className="input-group-text" style={{borderColor: sensitivity==="Weak"?"red":"green"}}><strong>{pass}</strong></span>
       </div>
     </div>
   );
