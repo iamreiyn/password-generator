@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/react-passgenerator/static/css/main.31d6cfe0.css",
-    "main.js": "/react-passgenerator/static/js/main.9435e3b8.js",
-    "index.html": "/react-passgenerator/index.html",
-    "main.9435e3b8.js.map": "/react-passgenerator/static/js/main.9435e3b8.js.map"
+    "main.css": "/react-password-generator/static/css/main.31d6cfe0.css",
+    "main.js": "/react-password-generator/static/js/main.9435e3b8.js",
+    "index.html": "/react-password-generator/index.html",
+    "main.9435e3b8.js.map": "/react-password-generator/static/js/main.9435e3b8.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
