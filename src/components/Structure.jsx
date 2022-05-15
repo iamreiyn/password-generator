@@ -67,13 +67,22 @@ function Structure() {
         document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('basic-addon2').className = "input-group-text text-success"
         document.getElementById('genPass').style.borderColor = 'green'
-    } else if (passwordLength > 30) {
+    } else if (passwordLength > 30 && passwordLength <= 60) {
         setSens("Overpowered")
         document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('basic-addon2').className = "input-group-text"
         document.getElementById("basic-addon2").style.color = "purple"
         document.getElementById('genPass').style.borderColor = 'purple'
+    } else if (passwordLength > 60) {
+      setSens("Overpowered")
+      document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
+      document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
+      document.getElementById('basic-addon2').className = "input-group-text"
+      document.getElementById("basic-addon2").style.color = "purple"
+      document.getElementById('genPass').style.borderColor = 'purple'
+        passwordLength = 60
+        document.getElementById('inputlength').value = '60'
     }
   }
 
