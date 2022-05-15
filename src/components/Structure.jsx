@@ -48,26 +48,32 @@ function Structure() {
         document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1 disabled"
         document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1 disabled"
         document.getElementById('basic-addon2').className = "input-group-text text-muted"
+        document.getElementById('genPass').style.borderColor = 'grey'
     } else if (passwordLength > 3 && passwordLength <= 9) {
         setSens("Weak")
         document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('basic-addon2').className = "input-group-text text-danger"
+        document.getElementById('genPass').style.borderColor = 'red'
     } else if (passwordLength >= 10 && passwordLength <= 19) {
         setSens("Medium")
         document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('basic-addon2').className = "input-group-text text-warning"
+        document.getElementById('genPass').style.borderColor = 'orange'
     } else if (passwordLength > 19 && passwordLength <= 30) {
         setSens("Strong")
         document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('basic-addon2').className = "input-group-text text-success"
+        document.getElementById('genPass').style.borderColor = 'green'
     } else if (passwordLength > 30) {
         setSens("Overpowered")
         document.getElementById('passGenbtn').className = "btn btn-primary my-3 mx-1"
         document.getElementById('copytoClipbtn').className = "btn btn-primary my-3 mx-1"
-        document.getElementById('basic-addon2').className = "input-group-text text-info"
+        document.getElementById('basic-addon2').className = "input-group-text"
+        document.getElementById("basic-addon2").style.color = "purple"
+        document.getElementById('genPass').style.borderColor = 'purple'
     }
   }
 
@@ -216,7 +222,7 @@ function Structure() {
       </button>
 
       <div className="input-group">
-      <span className="input-group-text" style={{borderColor: sensitivity==="Weak"?"red":"green"}}><strong>{pass}</strong></span>
+      <span className="input-group-text" id="genPass"><strong>{pass}</strong></span>
       </div>
     </div>
   );
