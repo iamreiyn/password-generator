@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/react-passgenerator/static/css/main.31d6cfe0.css",
+    "main.js": "/react-passgenerator/static/js/main.9435e3b8.js",
+    "index.html": "/react-passgenerator/index.html",
+    "main.9435e3b8.js.map": "/react-passgenerator/static/js/main.9435e3b8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.9435e3b8.js"
+  ]
+}
