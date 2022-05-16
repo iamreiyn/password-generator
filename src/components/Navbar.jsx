@@ -16,26 +16,26 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse mx-5" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
-                Home
+              <i class="fa fa-house-user" style={{fontSize:"20px"}}></i> Home
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="https://www.github.com/renisal">
-                Creator
+              <i class="fa fa-user" style={{fontSize:"20px"}}></i> Creator
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="https://github.com/renisal/react-password-generator">
-                Source
+              <i class="fa fa-code-fork" style={{fontSize:"20px"}}></i> Source
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="https://github.com/renisal?tab=repositories">
-                More Apps
+              <i class="fa fa-angles-right" style={{fontSize:"20px"}}></i> More Apps
               </a>
             </li>
           </ul>
