@@ -1,6 +1,6 @@
 {
-  "homepage": "https://renisal.github.io/react-password-generator",
-  "name": "react-password-generator",
+  "homepage": "https://renisal.github.io/password-generator",
+  "name": "password-generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

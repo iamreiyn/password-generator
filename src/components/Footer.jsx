@@ -2,17 +2,18 @@ function Footer() {
 
     return (
         <div>
-            <footer className="page-footer font-small blue">
 
-            <div class="card">
-  <ul className="list-group list-group-flush my-5">
-    <center><a href="https://github.com/renisal">Password Generator - An open source and personal project</a></center>
-    <center><strong>Disclaimer: Passwords are not stored</strong></center>
+  <ul className="list-group" style={{fontSize: "15px", marginTop: "8rem"}}>
+    <center style={{color: "white"}}><a target="_blank" rel="noreferrer" href="https://github.com/renisal/password-generator" style={{color: "#f5f50f", textDecoration: "none"}}>Password Generator:</a> An open source and personal project</center>
+    <center><img
+              className="mx-3 my-2"
+              src="https://skillicons.dev/icons?i=html,css,bootstrap,js,nodejs,react"
+              width="200"
+              height="35"
+              alt="langs"
+            /></center>
   </ul>
 </div>
-
-</footer>
-        </div>
     );
 }
 

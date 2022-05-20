@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Structure() {
+function Main() {
   const [uppercase, setUpStatus] = useState(true);
   const [lowercase, setLowStatus] = useState(true);
   const [symbols, setSymStatus] = useState(true);
@@ -154,11 +154,16 @@ function Structure() {
     setPass(generatedPassword);
   };
   return (
-    <div className="container my-5">
-      <h1>🔒 Random Password Generator</h1>
-      <hr></hr>
-      <div className="input-group mb-3" style={{ width: "500px" }}>
+    <>
+    <div className="card center" style={{height: "400px", width: "500px", color: "#172645", backgroundColor: "lightblue", borderRadius: "8%"}}>
+    <div className="card-header">
+      <strong>🔒 Password Generator</strong> <label style={{marginLeft: "165px"}}>by <strong><a target="_blank" rel="noreferrer" href="https://github.com/renisal" style={{color: "#172645", textDecoration: "none"}}>renisal</a></strong></label>
+    </div>
+    <div className="card-body">
+    <div className="container">
+      <div className="input-group mb-3" style={{ width: "420px" }}>
         <input
+        style={{backgroundColor: "#d3d3d3"}}
           id="inputlength"
           type="number"
           onChange={onChangeLength}
@@ -240,29 +245,34 @@ function Structure() {
         id="passGenbtn"
         onClick={generatePassword}
         type="button"
-        className="btn btn-primary my-3 mx-1 disabled"
+        className="btn btn-primary my-3 mx-1 disabled greyText"
+        style={{backgroundColor: "#172645" }}
       >
-        <label className="material-icons">done</label>Generate Password
+        <i className="fa fa-key" style={{ fontSize: "20px"}}></i> Generate
       </button>
       <button
         id="copytoClipbtn"
         onClick={copyToClip}
         type="button"
-        className="btn btn-primary my-3 mx-1 disabled"
+        className="btn btn-primary my-3 mx-1 disabled greyText"
+        style={{backgroundColor: "#172645"}}
       >
-        <span className="material-icons">content_copy</span> Copy to Clipboard
+        <i className="fa fa-copy" style={{ fontSize: "20px" }}></i> Copy
       </button>
       <button onClick={resetSettings} type="button" className="btn btn-danger my-3 mx-1">
-        <span className="material-icons">restart_alt</span> Reset
+      <i className="fa fa-eraser" style={{ fontSize: "20px" }}></i> Reset
       </button>
 
-      <div className="input-group">
-        <span className="input-group-text" id="genPass">
-          <strong>{pass}</strong>
+      <div className="input-group" >
+        <span className="input-group-text" id="genPass"style={{backgroundColor: "#e0dede"}}>
+          <strong style={{fontSize: "15px", color: "#172645"}}>{pass}</strong>
         </span>
       </div>
+      </div>
     </div>
+  </div>
+    </>
   );
 }
 
-export default Structure;
+export default Main;

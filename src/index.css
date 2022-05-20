@@ -1,4 +1,23 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://use.fontawesome.com/releases/v6.0.0/css/all.css";
 body {
     font-family: 'Poppins';
+    background-image: url("bannerbg.jpg");
+    background-color: #172645;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px;
+    padding: 10px;
+    margin-top: 100px;
+  }
+
+.form-check-input:checked {
+ background-color: #172645;
+}
+
+.greyText {
+    color: #d3d3d3;
 }

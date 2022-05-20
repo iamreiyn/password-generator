@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Fredoka One
+- Font Author: Copyright (c) 2011 Milena B Brandao (milenabbrandao@gmail.com), with Reserved Font Name "Fredoka"
+- Font Source: http://fonts.gstatic.com/s/fredokaone/v13/k3kUo8kEI-tA1RRcTZGmTmHBA6aF8Bf_.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
