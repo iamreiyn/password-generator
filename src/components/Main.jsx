@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FlipCard from "./FlipCard";
 
 function Main() {
   const [uppercase, setUpStatus] = useState(true);
@@ -6,6 +7,7 @@ function Main() {
   const [symbols, setSymStatus] = useState(true);
   const [numbers, setNumStatus] = useState(true);
   let passwordLength = -1;
+  const [changeCards, sChangeCards] = useState(true);
   const [sensitivity, setSens] = useState("Empty");
   const [pass, setPass] = useState(
     "Your generated password will be displayed here"
@@ -117,6 +119,18 @@ function Main() {
     document.getElementById('inputlength').value = ""
   }
 
+  const switchCards = () => {
+    if (changeCards) {
+      document.getElementById('flipcard').style.display = 'block';
+      document.getElementById('maincard').style.display = 'none'
+      sChangeCards(false)
+    } else {
+    document.getElementById('flipcard').style.display = 'none';
+    document.getElementById('maincard').style.display = 'block'
+    sChangeCards(true)
+  }
+  }
+
   const generatePassword = () => {
     if (!uppercase && !lowercase && !numbers && !symbols) {
       alert("Please select at least one character type");
@@ -153,9 +167,17 @@ function Main() {
 
     setPass(generatedPassword);
   };
+
   return (
     <>
-    <div className="card center" style={{height: "400px", width: "500px", color: "#172645", backgroundColor: "lightblue", borderRadius: "8%"}}>
+    <div className="form-check form-switch" style={{marginLeft: "92%", marginTop: "10px"}}>
+    <i
+      className="fa fa-random"
+      onClick={switchCards}
+      style={{cursor: "pointer", fontSize: "30px", color: changeCards?"#d3d3d3":"#172645", backgroundColor: changeCards?"#172645":"#d3d3d3", borderRadius: "50%", padding: "5px" }}
+    ></i>
+</div>
+    <div id="maincard" className="card center" style={{height: "400px", width: "500px", color: "#172645", backgroundColor: "lightblue", borderRadius: "8%"}}>
     <div className="card-header">
       <strong>🔒 Password Generator</strong> <label style={{marginLeft: "165px"}}>by <strong><a target="_blank" rel="noreferrer" href="https://github.com/renisal" style={{color: "#172645", textDecoration: "none"}}>renisal</a></strong></label>
     </div>
@@ -271,6 +293,7 @@ function Main() {
       </div>
     </div>
   </div>
+  <FlipCard/>
     </>
   );
 }

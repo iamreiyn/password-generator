@@ -11,7 +11,7 @@ body {
     width: 50%;
     border: 3px;
     padding: 10px;
-    margin-top: 100px;
+    margin-top: 85px;
   }
 
 .form-check-input:checked {
@@ -20,4 +20,12 @@ body {
 
 .greyText {
     color: #d3d3d3;
+}
+
+.nav-link {
+    color: rgb(61, 61, 65);
+}
+
+.nav-link:hover {
+    color: rgb(46, 0, 250);
 }
