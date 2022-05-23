@@ -123,10 +123,12 @@ function Main() {
     if (changeCards) {
       document.getElementById('flipcard').style.display = 'block';
       document.getElementById('maincard').style.display = 'none'
+      document.getElementById('infoc').className = 'fa fa-home'
       sChangeCards(false)
     } else {
     document.getElementById('flipcard').style.display = 'none';
     document.getElementById('maincard').style.display = 'block'
+    document.getElementById('infoc').className = 'fa fa-info-circle'
     sChangeCards(true)
   }
   }
@@ -172,9 +174,10 @@ function Main() {
     <>
     <div className="form-check form-switch" style={{marginLeft: "92%", marginTop: "10px"}}>
     <i
-      className="fa fa-random"
+      className="fa fa-info-circle"
+      id='infoc'
       onClick={switchCards}
-      style={{cursor: "pointer", fontSize: "30px", color: changeCards?"#d3d3d3":"#172645", backgroundColor: changeCards?"#172645":"#d3d3d3", borderRadius: "50%", padding: "5px" }}
+      style={{cursor: "pointer", fontSize: "30px", color: "#d3d3d3", backgroundColor: "#172645", borderRadius: "50%", padding: "5px" }}
     ></i>
 </div>
     <div id="maincard" className="card center" style={{height: "400px", width: "500px", color: "#172645", backgroundColor: "lightblue", borderRadius: "8%"}}>
