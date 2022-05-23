@@ -20,13 +20,13 @@ export default function FlipCard() {
                   target="_blank"
                   rel="noreferrer"
                   className="nav-link"
-                  href="https://github.com/renisal/regex-validator/issues/new/choose"
+                  href="https://github.com/renisal/password-generator/issues/new/choose"
                 >Suggestion</a></li>
           <li><a
                   target="_blank"
                   rel="noreferrer"
                   className="nav-link"
-                  href="https://github.com/renisal/regex-validator/issues/new/choose"
+                  href="https://github.com/renisal/password-generator/issues/new/choose"
                 >Bug Report</a></li>
           <li><a
                   target="_blank"
